@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block content %}
+
+<div class="background">
+    <h1>Disease</h1>
+    <div class="container">
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <p>{{form.name.label}}</p> {{form.name(size = 30)}}
+            </div>
+            <div class="form-group">
+                <p>{{form.age.label}}</p> {{form.age(size = 30)}}
+            </div>
+            <div class="form-group">
+                <p>{{form.description.label}}</p> {{form.description(size = 30)}}
+            </div>
+            <p class = "btn">{{ form.submit() }}</p>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/style/consultaion-history.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Secular+One&display=swap" rel="stylesheet">
+
+<div class="background">
+    <h1>consultation history</h1>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr class="heading">
+                    <th scope="col">Patient Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Consultation Date</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in dataset %}
+                <tr>
+                    <td>{{ data.name }}</td>
+                    <td>{{ data.age }}</td>
+                    <td>{{ data.description }}</td>
+                    <td>{{ data.date_added }}</td>
+                    <td><a href="{{ url_for('delete', id=data.id) }}" class="btn btn-consult">Delete</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
